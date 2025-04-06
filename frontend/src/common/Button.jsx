@@ -1,7 +1,4 @@
-
-
-
-const Button = ({ varaint = "default", size = "default", title }) => {
+const Button = ({ varaint = "default", size = "default", title, icon }) => {
   const varaints = {
     default: "bg-primary text-primary-foreground hover:bg-primary/90",
     destructive:
@@ -14,15 +11,18 @@ const Button = ({ varaint = "default", size = "default", title }) => {
   };
 
   const sizes = {
-    default: "h-10 px-4 py-2",
+    default: "h-10 px-4 py-2 flex gap-2 border",
     sm: "h-9 rounded-md px-3",
     lg: "h-11 rounded-md px-8",
     icon: "h-10 w-10",
   };
 
   return (
-    <button className={`${varaints[varaint]} ${sizes[size]}`}>{title}</button>
+    <button className={`${varaints[varaint]} ${sizes[size]}`}>
+      {icon}
+      {title}
+    </button>
   );
 };
 
-export default  Button;
+export default Button;
